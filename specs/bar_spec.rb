@@ -110,7 +110,7 @@ class BarTest < MiniTest::Test
     # it's better to pass in each one separately...
     # Make another class with drinks
 
-    
+
     # When a guest checks out make them pay their tab, take money out of their test_guest_has_wallet
     # make them wash dishes if they don't have enough money
     #
@@ -123,23 +123,23 @@ class BarTest < MiniTest::Test
 
     def test_test_try_larger_hash
       @bar.try_larger_hash(@guest4, 20)
-      my_try = [
+      bar_tab_hash = [
         {:room=>"Freddie Mercury Room",
          :guests=>[
            {:name=>"Dan Rudge", :tab=>20}
            ]
            }
-         ]
-      assert_equal(my_try, @guest_tabs)
+       ]
+      assert_equal(bar_tab_hash, @guest_tabs)
       @bar.try_larger_hash(@guest4, 20)
-      my_try = [
+      bar_tab_hash = [
         {:room=>"Freddie Mercury Room",
          :guests=>[
            {:name=>"Dan Rudge", :tab=>40}
            ]
            }
          ]
-         assert_equal(my_try, @guest_tabs)
+         assert_equal(bar_tab_hash, @guest_tabs)
     end
 
 

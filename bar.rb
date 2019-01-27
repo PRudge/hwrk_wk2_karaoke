@@ -32,8 +32,11 @@ class Bar
       end
     end
     guest_tab = {:room => @room.name,
-            :guests => [
-               {:name =>guest.name, :tab=>amt_owed}]}
+                 :guests =>
+                   [
+                    {:name =>guest.name, :tab=>amt_owed}
+                  ]
+                }
     @guest_tabs << guest_tab
   end
 
