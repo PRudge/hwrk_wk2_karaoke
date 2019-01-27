@@ -1,6 +1,7 @@
 class Bar
 
   attr_reader :room, :till, :guest_tabs
+  attr_writer :guest_tabs
 
   def initialize(room, till, guest_tabs)
     @room = room
@@ -15,7 +16,7 @@ class Bar
     end
   end
 
-  # I want the hash to look like guest_tabs_tryout in setup. 
+  # I want the hash to look like guest_tabs_tryout in setup.
   def update_tab(guest, amt_owed)
     @guest_tabs.find { |guest_tb| return guest_tb[:tab] += amt_owed if guest_tb[:name] == guest.name}
     guest_tab = {room: @room.name, name: guest.name, tab: amt_owed}

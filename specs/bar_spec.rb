@@ -8,23 +8,23 @@ require_relative("../bar")
 class BarTest < MiniTest::Test
   def setup
 
-# this is what I want my hash to look like
-    guest_tabs_tryout = [
-      {
-        :room => "Freddie Mercury Room",
-        :guests => [
-          {:name =>"Brogan Jones", :tab=>70},
-          {:name=>"Dan Rudge", :tab=>65}
-        ]
-      },
-      {
-        :room => "Prince Room",
-        :guests => [
-          {:name =>"Pauline Jones", :tab=>70},
-          {:name=>"Sheila McTavish", :tab=>65}
-        ]
-      }
-    ]
+# # this is what I want my hash to look like
+#     guest_tabs_tryout = [
+#       {
+#         :room => "Freddie Mercury Room",
+#         :guests => [
+#           {:name =>"Brogan Jones", :tab=>70},
+#           {:name=>"Dan Rudge", :tab=>65}
+#         ]
+#       },
+#       {
+#         :room => "Prince Room",
+#         :guests => [
+#           {:name =>"Pauline Jones", :tab=>70},
+#           {:name=>"Sheila McTavish", :tab=>65}
+#         ]
+#       }
+#     ]
 
     @song1 = Song.new("Bohemian Rhapsody")
     @song2 = Song.new("Now we are Free")
@@ -55,10 +55,13 @@ class BarTest < MiniTest::Test
     @room2 = Room.new("Prince Room", @guests2, @songs2,  @guests2.length, 25)
     @rooms = [@room1, @room2]
 
+
+    @guest_tabs = []
+
     @bar = Bar.new(@room1, 2000, @guest_tabs)
     @bar2 = Bar.new(@room2, 2000, @guest_tabs)
 
-    @guest_tabs = []
+
   end
 
   def test_room_have_names
